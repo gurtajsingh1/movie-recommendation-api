@@ -1,4 +1,4 @@
-# Stack Implementation
+# Things implemented in this Project
 * Java 21
 * Spring Boot 3.x
 * Spring Framework 6
