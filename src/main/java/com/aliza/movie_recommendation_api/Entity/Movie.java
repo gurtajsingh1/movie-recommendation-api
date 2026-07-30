@@ -1,12 +1,10 @@
-package com.aliza.movie_recommendation_api.model;
+package com.aliza.movie_recommendation_api.Entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @Entity
 @AllArgsConstructor
