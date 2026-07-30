@@ -1,0 +1,197 @@
+movie-recommendation-api
+│
+├── pom.xml
+├── README.md
+├── Dockerfile
+├── docker-compose.yml
+├── .gitignore
+│
+├── src
+│
+├── main
+│   │
+│   ├── java
+│   │   └── com
+│   │       └── cinematch
+│   │
+│   │           ├── MovieRecommendationApplication.java
+│   │
+│   │           ├── config
+│   │           │
+│   │           │── SecurityConfig.java
+│   │           │── SwaggerConfig.java
+│   │           │── OpenApiConfig.java
+│   │           │── ModelMapperConfig.java
+│   │           │── JacksonConfig.java
+│   │           │── CacheConfig.java
+│   │           │── AsyncConfig.java
+│   │           │── WebConfig.java
+│   │           │
+│   │           ├── controller
+│   │           │
+│   │           │── AuthController.java
+│   │           │── UserController.java
+│   │           │── MovieController.java
+│   │           │── GenreController.java
+│   │           │── DirectorController.java
+│   │           │── ActorController.java
+│   │           │── ReviewController.java
+│   │           │── FavoriteController.java
+│   │           │── WatchlistController.java
+│   │           │── RecommendationController.java
+│   │           │── AdminController.java
+│   │           │
+│   │           ├── entity
+│   │           │
+│   │           │── BaseEntity.java
+│   │           │── User.java
+│   │           │── Role.java
+│   │           │── Movie.java
+│   │           │── Genre.java
+│   │           │── Actor.java
+│   │           │── Director.java
+│   │           │── Review.java
+│   │           │── Favorite.java
+│   │           │── Watchlist.java
+│   │           │── RefreshToken.java
+│   │           │
+│   │           ├── enums
+│   │           │
+│   │           │── RoleType.java
+│   │           │── MovieStatus.java
+│   │           │── WatchStatus.java
+│   │           │── Language.java
+│   │           │
+│   │           ├── repository
+│   │           │
+│   │           │── UserRepository.java
+│   │           │── RoleRepository.java
+│   │           │── MovieRepository.java
+│   │           │── GenreRepository.java
+│   │           │── ActorRepository.java
+│   │           │── DirectorRepository.java
+│   │           │── ReviewRepository.java
+│   │           │── FavoriteRepository.java
+│   │           │── WatchlistRepository.java
+│   │           │── RefreshTokenRepository.java
+│   │           │
+│   │           ├── dto
+│   │           │
+│   │           │── request
+│   │           │     │── LoginRequest.java
+│   │           │     │── RegisterRequest.java
+│   │           │     │── CreateMovieRequest.java
+│   │           │     │── UpdateMovieRequest.java
+│   │           │     │── CreateGenreRequest.java
+│   │           │     │── ReviewRequest.java
+│   │           │
+│   │           │── response
+│   │           │     │── JwtResponse.java
+│   │           │     │── UserResponse.java
+│   │           │     │── MovieResponse.java
+│   │           │     │── GenreResponse.java
+│   │           │     │── ReviewResponse.java
+│   │           │     │── ApiResponse.java
+│   │
+│   │           ├── mapper
+│   │           │
+│   │           │── UserMapper.java
+│   │           │── MovieMapper.java
+│   │           │── GenreMapper.java
+│   │           │── ReviewMapper.java
+│   │
+│   │           ├── service
+│   │           │
+│   │           │── AuthService.java
+│   │           │── UserService.java
+│   │           │── MovieService.java
+│   │           │── GenreService.java
+│   │           │── ActorService.java
+│   │           │── DirectorService.java
+│   │           │── ReviewService.java
+│   │           │── FavoriteService.java
+│   │           │── WatchlistService.java
+│   │           │── RecommendationService.java
+│   │
+│   │           ├── service
+│   │           │      └── impl
+│   │           │
+│   │           │── AuthServiceImpl.java
+│   │           │── UserServiceImpl.java
+│   │           │── MovieServiceImpl.java
+│   │           │── GenreServiceImpl.java
+│   │           │── ActorServiceImpl.java
+│   │           │── DirectorServiceImpl.java
+│   │           │── ReviewServiceImpl.java
+│   │           │── FavoriteServiceImpl.java
+│   │           │── WatchlistServiceImpl.java
+│   │           │── RecommendationServiceImpl.java
+│   │
+│   │           ├── security
+│   │           │
+│   │           │── JwtAuthenticationFilter.java
+│   │           │── JwtService.java
+│   │           │── JwtAuthenticationEntryPoint.java
+│   │           │── CustomUserDetails.java
+│   │           │── CustomUserDetailsService.java
+│   │           │
+│   │           ├── specification
+│   │           │
+│   │           │── MovieSpecification.java
+│   │           │── UserSpecification.java
+│   │
+│   │           ├── exception
+│   │           │
+│   │           │── GlobalExceptionHandler.java
+│   │           │── MovieNotFoundException.java
+│   │           │── UserNotFoundException.java
+│   │           │── GenreNotFoundException.java
+│   │           │── InvalidCredentialsException.java
+│   │           │── DuplicateResourceException.java
+│   │           │── UnauthorizedException.java
+│   │
+│   │           ├── util
+│   │           │
+│   │           │── ApiResponse.java
+│   │           │── AppConstants.java
+│   │           │── JwtUtil.java
+│   │           │── DateUtil.java
+│   │           │── PaginationUtil.java
+│   │           │
+│   │           ├── scheduler
+│   │           │
+│   │           │── RecommendationScheduler.java
+│   │           │── CleanupScheduler.java
+│   │
+│   │           ├── event
+│   │           │
+│   │           │── UserRegisteredEvent.java
+│   │           │── MovieReviewedEvent.java
+│   │
+│   │           ├── listener
+│   │           │
+│   │           │── UserRegistrationListener.java
+│   │           │── ReviewListener.java
+│   │
+│   │           └── audit
+│   │
+│   │               └── AuditConfig.java
+│   │
+│   └── resources
+│
+│       ├── application.yml
+│       ├── application-dev.yml
+│       ├── application-prod.yml
+│       ├── logback.xml
+│       ├── data.sql
+│       └── banner.txt
+│
+└── test
+    └── java
+        └── com
+            └── movie-api-test
+                │
+                ├── controller
+                ├── service
+                ├── repository
+                └── integration
